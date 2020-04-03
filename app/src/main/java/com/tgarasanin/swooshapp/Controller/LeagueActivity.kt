@@ -1,10 +1,11 @@
-package com.tgarasanin.swooshapp
+package com.tgarasanin.swooshapp.Controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.tgarasanin.swooshapp.Utilities.EXTRA_LEAGUE
+import com.tgarasanin.swooshapp.R
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
@@ -31,12 +32,13 @@ class LeagueActivity : BaseActivity() {
     fun onCoEdClicked(view: View) {
         mensToggleButton.isChecked = false
         womensToggleButton.isChecked = false
-        selectedLeague = "womens"
+        selectedLeague = "co-ed"
     }
 
     fun nextButtonClicked(view: View) {
         if (selectedLeague != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
+            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
             startActivity(skillActivity)
         } else {
             Toast.makeText(this, "Please select a league", Toast.LENGTH_SHORT).show()
