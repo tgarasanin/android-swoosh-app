@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.tgarasanin.swooshapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class WelcomeActivity : AppCompatActivity() {
+class WelcomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
